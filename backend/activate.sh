@@ -1,3 +1,3 @@
 #!/bin/bash
-export FLASH_APP=g2.py
+export FLASK_APP=g2.py
 . venv/bin/activate
