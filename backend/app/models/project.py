@@ -10,7 +10,9 @@ class Project(db.Model):
     __tablename__ = 'project'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
-    description = db.Column(db.String, unique=True)
+    description = db.Column(db.String)
+    start_time = db.Column(db.DateTime)
+    stop_time = db.Column(db.DateTime)
     parents = db.relationship(
         'Project',
         secondary=project_tree,
@@ -26,3 +28,12 @@ class Project(db.Model):
     def __init__(self, name, description):
         self.name = name
         self.description = description
+
+    def serialize(self):
+        return {
+            "name": self.name,
+            "description": self.description,
+            "start_time": self.start_time.timestamp() if self.start_time else None,
+            "stop_time": self.stop_time.timestamp() if self.stop_time else None,
+            "id": self.id
+        }

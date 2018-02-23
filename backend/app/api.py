@@ -1,9 +1,7 @@
 from . import app, db
 from app import models
+from flask import jsonify
 
-@app.route("/persons")
-def get_persons():
-    t = models.Project("Testproject", "beschrijving enzo")
-    db.session.add(t)
-    db.session.commit()
-    return t.name
+@app.route("/projects")
+def get_all_projects():
+    return jsonify([project.serialize() for project in models.Project.query.all()])
