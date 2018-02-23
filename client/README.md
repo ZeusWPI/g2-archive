@@ -1,30 +1,9 @@
-# g2
+# G2 Client
+## Installation (**incomplete**)
+1. Install npm
+2. Run `npm install` in client
 
-> G2 by Zeus WPI
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Starting the client
+1. Run `npm run dev` in client
+2. Navigate to localhost:8080 to view the page
+3. The site will reload every time you save changes to any of the files
